@@ -1,0 +1,119 @@
+.wp-block-usercompanygrid-team-grid{
+  max-width: 100% !important;
+}
+.wp-block-usercompanygrid-team-grid {
+  .team-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    // >= 640px → 2 columns
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    // >= 1024px → 3 columns
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .team-member-card {
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+    gap: 15px;
+
+    // stack content on small screens
+    @media (max-width: 639px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+  }
+
+  .team-member-card:hover {
+    background: rgba(0, 0, 0, 0.92);
+    transform: translateY(-1px);
+  }
+
+  .team-member-left {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .team-member-avatar img,
+  .team-member-avatar .avatar {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+  }
+
+  .team-member-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-title {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .item-subtitle {
+    margin: 0;
+    font-size: 16px;
+    color: #cfcfcf;
+  }
+
+  .team-member-right {
+    margin-left: 0px;
+
+    @media (max-width: 639px) {
+      margin-left: 0;
+    }
+  }
+
+  .item-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 10px 14px;
+    transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  .item-cta:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateX(2px);
+  }
+
+  .item-cta .arrow {
+    font-size: 18px;
+    line-height: 1;
+  }
+}
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-user-teamgrid {
+	background-color: #21759b;
+	color: #fff;
+	padding: 2px;
+}
